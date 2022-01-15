@@ -1,3 +1,4 @@
+
 body{
     margin: 0px;
     font-family: 'Source Sans Pro', sans-serif;
@@ -63,9 +64,9 @@ body{
 .about{
     padding: 70px 0px;
     position: relative;
+    display: flex;
 }
 .about1{
-    float: left;
     width:49%;
     position: relative;
 }
@@ -75,10 +76,16 @@ body{
     border:7px #555555 solid;
     border-radius: 5px;
 }
-.about1 img{
+.about-img{
     position: absolute;
     bottom: 0;
-    padding-left: 25px;
+    padding-left: 25px; 
+    transition: all 0.5s ease 0s;
+}
+.about-img:hover{
+    opacity: 1;
+    visibility: visible;
+    background-color:rgba(0, 0, 0, 0.57);
 }
 .about1 h2{
     border-left:5px solid #ff305b;
@@ -129,10 +136,16 @@ span{
     padding: 70px 30px;
     margin: auto;
 }
+.our-servicesF{
+    display: flex;
+}
 .our-services1{
-    float: left;
     width:21%;
     padding: 40px 10px;
+    transition: all 0.3s ease-in-out 0s;
+}
+.our-services1:hover{
+    transform: scale(1.2);
 }
 .our-services h2{
     color: #333;
@@ -169,6 +182,21 @@ span{
     margin: auto;
     margin-bottom: 70px;
 }
+.our-portfolioF{
+    height: 400px;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-evenly;
+    align-content: space-around;
+}
+.our-portfolioF img{
+    width: 30%;
+    transition: bachground-color 2s ;
+}
+.our-portfolioF:hover img {
+    background-color: #333333;
+}
+
 .our-portfolio h2{
     color: #333;
     font-size: 40px;
@@ -183,12 +211,7 @@ span{
     margin-top: 10px;
 }
 .our-portfolio12{
-    float: left;
-    width:30%;
     padding: 10px;
-}
-.our-portfolio12 img{
-    width: 100%;
 }
 .numbers h2{
     color: #333;
@@ -198,13 +221,12 @@ span{
 }
 .numbers{
     text-align: center;
-    margin: auto;
-    margin-bottom: 70px;
-    padding-top: 50px;
     background-color: #f1f1f1;
+    display: flex;
+    justify-content: space-evenly;
+    align-content: space-around;
 }
 .numbers1{
-    float: left;
     width:22%;
     padding: 10px;
 }
@@ -218,20 +240,32 @@ span{
     text-align: center;
     margin: auto;    
 }
-.clients-feedback1{
-    text-align: center;
-    background: #f1f1f1 ;
+.client{
+    width: 80%;
+    margin: auto;
+    background:#f1f1f1;
     margin-top:70px;
-    padding: 70px 30px;
+    padding: 20px;
+    display: flex;
+    border-radius: 1%;
+    position: relative;
+    overflow:hidden;
+    box-sizing: border-box;
 }
-.clients-feedback12{
-    float: left;
-    width: 40%;
-    padding: 40px 10px;
+.client-design{
+    height: 300px;
+    width: 400px;
+    background-color: #ff305b;
+    position: absolute;
+    right: 550px;
+    bottom: 139px;
+    transform:rotate(40deg)
 }
 .clients-feedback12 img{
-   float: right;
    border-radius: 50%;
+   padding-top: 40px;
+   position: relative;
+   z-index: 22;
 }
 .clients-feedback12 h4{
     font-size: 26px;
@@ -277,8 +311,12 @@ span{
     margin-top:70px;
     padding: 50px 30px;
 }
+.blogF{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: space-around;
+}
 .blog12{
-    float: left;
     width: 30%;
     padding: 40px 10px;
 }
@@ -347,37 +385,21 @@ textarea{
     color: #ff305b;
 }
 @media screen and (min-device-width: 360px) and (max-device-width: 767px) {
+    .about{
+        flex-wrap: wrap;
+    }
     .about1{
-        float: left;
         width:99%;
+    }
+    .our-servicesF{
+        flex-wrap: wrap;
     }
     .our-services1{
-        float: left;
         width:99%;
         padding: 40px 10px;
     }
-    .our-portfolio12{
-        float: left;
-        width:99%;
-        padding: 10px;
-    }
-    .numbers1{
-        float: left;
-        width: 40%;
-        padding: 10px;
-    }
-    .clients-feedback12{
-        float: left;
-        width: 90%;
-        padding: 40px 10px;
-    }
-    .clients-feedback12 img{
-        float: left;
-    }
-    .blog12{
-        float: left;
-        width: 99%;
-        padding: 40px 10px;
+    .our-portfolioF{
+        flex-wrap: wrap;
     }
     .contact-us1 input{
         margin-top: 40px;
@@ -387,37 +409,25 @@ textarea{
     }    
 }
 @media screen and (min-device-width: 768px) and (max-device-width: 1199px) {
+    .about{
+        flex-wrap: wrap;
+    }
     .about1{
-        float: left;
         width:99%;
     }
+    .our-servicesF{
+        flex-wrap: wrap;
+    }
     .our-services1{
-        float: left;
         width:45%;
         padding: 40px 10px;
     }
+    .our-portfolioF{
+        flex-wrap: wrap;
+    }
     .our-portfolio12{
-        float: left;
         width:99%;
         padding: 10px;
-    }
-    .numbers1{
-        float: left;
-        width: 40%;
-        padding: 10px;
-    }
-    .clients-feedback12{
-        float: left;
-        width: 90%;
-        padding: 40px 10px;
-    }
-    .clients-feedback12 img{
-        float: left;
-    }
-    .blog12{
-        float: left;
-        width: 99%;
-        padding: 40px 10px;
     }
     .contact-us1 input{
         margin-top: 40px;
